@@ -103,3 +103,6 @@ let g:which_key_map.c = {
 
 " Register which key map
 call which_key#register('<Space>', "g:which_key_map")
+
+
+" explorer
