@@ -38,6 +38,8 @@ Plug 'arakashic/chromatica.nvim'
 Plug 'sainnhe/sonokai'
 
 Plug 'vimlab/split-term.vim'
+Plug 'vim-scripts/DoxygenToolkit.vim'
+
 call plug#end()
 
 

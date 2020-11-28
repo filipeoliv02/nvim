@@ -44,3 +44,6 @@ let g:mapleader="\<Space>"
 
 " Nerd Tree toggler
 nnoremap <F2> :NERDTreeToggle<Enter>
+
+" GOTO DEFINITION
+nmap <silent> gd <Plug>(coc-definition)
