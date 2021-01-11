@@ -1,5 +1,7 @@
 source $HOME/.config/nvim/settings.vim
 source $HOME/.config/nvim/mappings.vim
+source $HOME/.config/nvim/start-screen.vim
+source $HOME/.config/nvim/plug-config/fzf.vim
 
 call plug#begin()
 
@@ -29,17 +31,18 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'sheerun/vim-polyglot'
 " Fuzzy Finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-" Plug 'airblade/vim-rooter'
+Plug 'junegunn/fzf.vim'
+Plug 'airblade/vim-rooter'
 " Auto format clangd
 Plug 'rhysd/vim-clang-format'
 " C better syntax
 Plug 'arakashic/chromatica.nvim'
 " Best theme ever
 Plug 'sainnhe/sonokai'
-
+Plug 'gruvbox-community/gruvbox'
 Plug 'vimlab/split-term.vim'
-Plug 'vim-scripts/DoxygenToolkit.vim'
-
+"MIPS syntax Highlighting
+Plug 'ARM9/mips-syntax-vim'
 call plug#end()
 
 
@@ -53,8 +56,7 @@ let g:lightline = {
       \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'filename', 'modified' ] ]
       \ },
       \ 'tabline': {
-      \   'left': [ ['buffers'] ],
-      \   'right': [ ['close'] ]
+      \   'left': [ ['buffers'] ]
       \ },
       \ 'component_expand': {
       \   'buffers': 'lightline#bufferline#buffers'
@@ -87,24 +89,19 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
   \| autocmd BufLeave <buffer> set laststatus=2 noshowmode ruler
 " Single mappings
 let g:which_key_map['/'] = [ '<plug>NERDCommenterToggle'  , 'Comment Line' ]
-let g:which_key_map['e'] = [ ':CocCommand explorer'       , 'explorer' ]
-let g:which_key_map['f'] = [ ':FZF'                       , 'FZF' ]
-let g:which_key_map['h'] = [ '<C-W>s'                     , 'split below']
-let g:which_key_map['r'] = [ ':Ranger'                    , 'ranger' ]
-let g:which_key_map['S'] = [ ':Startify'                  , 'start screen' ]
-let g:which_key_map['T'] = [ ':Rg'                        , 'search text' ]
-let g:which_key_map['v'] = [ '<C-W>v'                     , 'split right']
-let g:which_key_map['z'] = [ 'Goyo'                       , 'zen' ]
+let g:which_key_map['f'] = [ ':Files'                       , 'Search files' ]
+let g:which_key_map['r'] = [ ':Rg'                       , 'Search on files' ]
+let g:which_key_map['v'] = [ '<C-W>v'                     , 'Split Right']
 
 let g:which_key_map.c = {
       \ 'name' : '+code' ,
-      \ 'c' : [':!cmake --build ./ -- -j 6'               , 'Build'],
-      \ 'g' : [':!gcc -lm -lglut -lGL -lGLU %'            , 'glut compile'],
-      \ 'G' : [':Term7 ./a.out'                           , 'Run Glut File'],
+      \ 'c' : [':!cmake --build /home/filipe/Projects/Gestor_de_Reservas-C/cmake-build-debug --target AED1_LP1 -- -j 6'   , 'Build'],
+      \ 'r' : [':VTerm50 ./cmake-build-debug/AED1_LP1'                             , 'run'],
+      \ 'g' : [':!gcc -lm -lglut -lGL -lGLU %'                             , 'glut compile'],
+      \ 'G' : [':Term7 ./a.out'                                            , 'Run Glut File'],
       \ }
 
 " Register which key map
 call which_key#register('<Space>', "g:which_key_map")
 
 
-" explorer

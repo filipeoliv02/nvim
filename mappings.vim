@@ -47,3 +47,5 @@ nnoremap <F2> :NERDTreeToggle<Enter>
 
 " GOTO DEFINITION
 nmap <silent> gd <Plug>(coc-definition)
+
+
