@@ -6,7 +6,7 @@ source $HOME/.config/nvim/plug-config/fzf.vim
 call plug#begin()
 
 " auto complete
-Plug 'neoclide/coc.nvim', { 'branch': 'master', 'do': 'yarn install --frozen-lockfile' }
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jackguo380/vim-lsp-cxx-highlight'
 " Start Screen - NEEDS CONFIG
 Plug 'mhinz/vim-startify'
@@ -32,7 +32,7 @@ Plug 'sheerun/vim-polyglot'
 " Fuzzy Finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'airblade/vim-rooter'
+"Plug 'airblade/vim-rooter'
 " Auto format clangd
 Plug 'rhysd/vim-clang-format'
 " C better syntax
@@ -97,7 +97,7 @@ let g:which_key_map.c = {
       \ 'name' : '+code' ,
       \ 'c' : [':!cmake --build /home/filipe/Projects/Gestor_de_Reservas-C/cmake-build-debug --target AED1_LP1 -- -j 6'   , 'Build'],
       \ 'r' : [':VTerm50 ./cmake-build-debug/AED1_LP1'                             , 'run'],
-      \ 'g' : [':!gcc -lm -lglut -lGL -lGLU %'                             , 'glut compile'],
+      \ 'g' : [':!gcc -lm -lglut -lGL -lGLU % glm.c'                             , 'glut compile'],
       \ 'G' : [':Term7 ./a.out'                                            , 'Run Glut File'],
       \ }
 
