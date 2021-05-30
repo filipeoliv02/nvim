@@ -2,54 +2,53 @@ source $HOME/.config/nvim/settings.vim
 source $HOME/.config/nvim/mappings.vim
 source $HOME/.config/nvim/start-screen.vim
 source $HOME/.config/nvim/plug-config/fzf.vim
+source $HOME/.config/nvim/dotnetconfig.vim
 
+
+"--------------PLUGINS--------------
 call plug#begin()
-
+"CSharp
+Plug 'OmniSharp/omnisharp-vim'
+" Auto pairs for '(' '[' '{'
+Plug 'jiangmiao/auto-pairs'
+" Colors on Hex Codes
+Plug 'norcalli/nvim-colorizer.lua'
+" Start Screen
+Plug 'mhinz/vim-startify'
+" Status line
+Plug 'itchyny/lightline.vim'
+Plug 'mengelbrecht/lightline-bufferline'
+Plug 'maximbaz/lightline-ale'
+" Fuzzy Finder
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 " auto complete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'jackguo380/vim-lsp-cxx-highlight'
-" Start Screen - NEEDS CONFIG
-Plug 'mhinz/vim-startify'
-" File Explorer - Incomplete
+" NerdTree
 Plug 'preservim/nerdtree' 
 Plug 'Xuyuanp/nerdtree-git-plugin' 
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
  "Comment helper
 Plug 'scrooloose/nerdcommenter'
-" Status line
-Plug 'itchyny/lightline.vim'
-Plug 'mengelbrecht/lightline-bufferline'
-" Colors on Hex Codes
-Plug 'norcalli/nvim-colorizer.lua'
 " Leader Key Helper - NEEDS CONFIG
 Plug 'liuchengxu/vim-which-key'
-" Auto pairs for '(' '[' '{'
-Plug 'jiangmiao/auto-pairs'
-
-" Better Syntax Support
-Plug 'sheerun/vim-polyglot'
-" Fuzzy Finder
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-"Plug 'airblade/vim-rooter'
-" Auto format clangd
-Plug 'rhysd/vim-clang-format'
-" C better syntax
-Plug 'arakashic/chromatica.nvim'
-" Best theme ever
+Plug 'vimlab/split-term.vim'
+"Themes
 Plug 'sainnhe/sonokai'
 Plug 'gruvbox-community/gruvbox'
-Plug 'vimlab/split-term.vim'
-"MIPS syntax Highlighting
-Plug 'ARM9/mips-syntax-vim'
+"-----------------------------------
 call plug#end()
 
 
+"--------nvim-colorizer-------------
 lua require'colorizer'.setup()
+"-----------------------------------
+
+
 let g:sonokai_enable_italic = 1
 let g:sonokai_disable_italic_comment = 1
-colorscheme sonokai                                      "Set the current color scheme/theme
+colorscheme sonokai
 let g:lightline = {
       \ 'colorscheme': 'material',
       \ 'active': {
