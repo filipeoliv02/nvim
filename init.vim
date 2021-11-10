@@ -1,54 +1,71 @@
+" Additional Configuration Files
 source $HOME/.config/nvim/settings.vim
 source $HOME/.config/nvim/mappings.vim
 source $HOME/.config/nvim/start-screen.vim
 source $HOME/.config/nvim/plug-config/fzf.vim
-source $HOME/.config/nvim/dotnetconfig.vim
-
+source $HOME/.config/nvim/plug-config/lsp-config.vim
+source $HOME/.config/nvim/plug-config/cmp-config.vim
 
 "--------------PLUGINS--------------
 call plug#begin()
-"CSharp
-Plug 'OmniSharp/omnisharp-vim'
+"LSP
+Plug 'neovim/nvim-lspconfig'
+Plug 'williamboman/nvim-lsp-installer'
+
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/vim-vsnip'
 " Auto pairs for '(' '[' '{'
 Plug 'jiangmiao/auto-pairs'
+"##################################
 " Colors on Hex Codes
 Plug 'norcalli/nvim-colorizer.lua'
+"##################################
 " Start Screen
 Plug 'mhinz/vim-startify'
+"##################################
 " Status line
 Plug 'itchyny/lightline.vim'
 Plug 'mengelbrecht/lightline-bufferline'
 Plug 'maximbaz/lightline-ale'
+"##################################
 " Fuzzy Finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-" auto complete
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"##################################
+" i3wm syntax highlight
+Plug 'mboughaba/i3config.vim'
+"##################################
 " NerdTree
 Plug 'preservim/nerdtree' 
 Plug 'Xuyuanp/nerdtree-git-plugin' 
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
+"##################################
  "Comment helper
 Plug 'scrooloose/nerdcommenter'
+"##################################
 " Leader Key Helper - NEEDS CONFIG
 Plug 'liuchengxu/vim-which-key'
 Plug 'vimlab/split-term.vim'
+"##################################
 "Themes
 Plug 'sainnhe/sonokai'
 Plug 'gruvbox-community/gruvbox'
-"-----------------------------------
 call plug#end()
-
 
 "--------nvim-colorizer-------------
 lua require'colorizer'.setup()
 "-----------------------------------
 
-
+colorscheme sonokai
 let g:sonokai_enable_italic = 1
 let g:sonokai_disable_italic_comment = 1
-colorscheme sonokai
+let g:lightline#bufferline#enable_devicons = 1
 let g:lightline = {
       \ 'colorscheme': 'material',
       \ 'active': {
@@ -64,11 +81,6 @@ let g:lightline = {
       \   'buffers': 'tabsel'
       \ }
       \ }
-
-
-let g:lightline#bufferline#enable_devicons = 1
-
-
 
 " Map leader to which_key
 nnoremap <silent> <leader> :silent WhichKey '<Space>'<CR>
