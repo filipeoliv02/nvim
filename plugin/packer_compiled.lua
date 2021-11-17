@@ -104,6 +104,11 @@ _G.packer_plugins = {
     path = "/home/filipe/.local/share/nvim/site/pack/packer/start/lightline.vim",
     url = "https://github.com/itchyny/lightline.vim"
   },
+  nerdcommenter = {
+    loaded = true,
+    path = "/home/filipe/.local/share/nvim/site/pack/packer/start/nerdcommenter",
+    url = "https://github.com/preservim/nerdcommenter"
+  },
   nerdtree = {
     loaded = true,
     path = "/home/filipe/.local/share/nvim/site/pack/packer/start/nerdtree",
@@ -143,6 +148,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/filipe/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["vim-ctrlspace"] = {
+    loaded = true,
+    path = "/home/filipe/.local/share/nvim/site/pack/packer/start/vim-ctrlspace",
+    url = "https://github.com/vim-ctrlspace/vim-ctrlspace"
   },
   ["vim-devicons"] = {
     loaded = true,

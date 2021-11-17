@@ -3,15 +3,18 @@ local editor = vim.o
 local global = vim.g
 local window = vim.wo
 
+global.filetype_plugin_on = 1
+global.CtrlSpaceDefaultMappingKey = "<C-space> "
+global.CtrlSpaceLoadLastWorkspaceOnStart = 1
 buffer.tabstop = 4
 buffer.softtabstop = 2
 buffer.shiftwidth = 4
 buffer.expandtab = true
 buffer.smartindent = true
-editor.termguicolors = true
 window.number = true
 window.relativenumber = true
 editor.hidden = true
+editor.compatible = false
 editor.belloff = 'all'
 editor.wrap = false
 editor.smartcase = true
@@ -26,14 +29,14 @@ editor.splitbelow = true
 editor.splitright = true
 editor.mouse = 'a'
 editor.writebackup = false
-editor.showtabline = 2
+editor.showtabline = 0
 editor.updatetime = 50         
 editor.timeoutlen = 50         
 editor.clipboard = 'unnamedplus'
 editor.autochdir = true
 editor.laststatus = 2
 editor.showmode = false
-
+editor.termguicolors = true
 global.colors_name = 'sonokai'
-
+global.encoding = 'utf-8'
 global.mapleader = " "
