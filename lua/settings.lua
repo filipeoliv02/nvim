@@ -1,0 +1,39 @@
+local buffer = vim.bo
+local editor = vim.o
+local global = vim.g
+local window = vim.wo
+
+buffer.tabstop = 4
+buffer.softtabstop = 2
+buffer.shiftwidth = 4
+buffer.expandtab = true
+buffer.smartindent = true
+editor.termguicolors = true
+window.number = true
+window.relativenumber = true
+editor.hidden = true
+editor.belloff = 'all'
+editor.wrap = false
+editor.smartcase = true
+editor.ignorecase = true
+editor.swapfile = false
+editor.backup = false
+editor.incsearch = true
+editor.scrolloff = 8
+editor.signcolumn = 'yes'
+editor.cmdheight = 2                        
+editor.splitbelow = true                          
+editor.splitright = true
+editor.mouse = 'a'
+editor.writebackup = false
+editor.showtabline = 2
+editor.updatetime = 50         
+editor.timeoutlen = 50         
+editor.clipboard = 'unnamedplus'
+editor.autochdir = true
+editor.laststatus = 2
+editor.showmode = false
+
+global.colors_name = 'sonokai'
+
+global.mapleader = " "
