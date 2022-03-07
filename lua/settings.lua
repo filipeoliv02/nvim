@@ -1,42 +1,63 @@
-local buffer = vim.bo
-local editor = vim.o
-local global = vim.g
-local window = vim.wo
+buffer = vim.bo
+editor = vim.o
+global = vim.g
+window = vim.wo
+command = vim.cmd
+option = vim.opt
 
 global.filetype_plugin_on = 1
 global.CtrlSpaceDefaultMappingKey = "<C-space> "
 global.CtrlSpaceLoadLastWorkspaceOnStart = 1
-buffer.tabstop = 4
-buffer.softtabstop = 2
-buffer.shiftwidth = 4
-buffer.expandtab = true
-buffer.smartindent = true
-window.number = true
-window.relativenumber = true
+
+option.tabstop = 4
+option.softtabstop = 2
+option.shiftwidth = 4
+option.expandtab = true
+option.smartindent = true
+option.cursorline = true 
+option.number = true
+option.numberwidth = 2
+option.relativenumber = true
+
+option.pumheight = 10
+
 editor.hidden = true
 editor.compatible = false
 editor.belloff = 'all'
-editor.wrap = false
-editor.smartcase = true
-editor.ignorecase = true
-editor.swapfile = false
-editor.backup = false
+option.wrap = false
+option.smartcase = true
+option.ignorecase = true
+option.swapfile = false
+option.backup = false
+option.hlsearch = true
 editor.incsearch = true
 editor.scrolloff = 8
-editor.signcolumn = 'yes'
-editor.cmdheight = 2                        
-editor.splitbelow = true                          
-editor.splitright = true
+editor.sidescrolloff = 8
+option.signcolumn = 'yes'
+option.cmdheight = 2                        
+option.splitbelow = true                          
+option.splitright = true
 editor.mouse = 'a'
-editor.writebackup = false
-editor.showtabline = 0
-editor.updatetime = 50         
-editor.timeoutlen = 50         
-editor.clipboard = 'unnamedplus'
+option.writebackup = false
+option.showtabline = 0
+option.updatetime = 50         
+option.timeoutlen = 50         
+option.clipboard = 'unnamedplus'
 editor.autochdir = true
 editor.laststatus = 2
-editor.showmode = false
-editor.termguicolors = true
-global.colors_name = 'sonokai'
+option.showmode = false
+option.termguicolors = true
+command[[colorscheme everforest]]
+vim.o.background = 'dark'
+global.everforest_background = 'hard'
+global.tokyonight_enable_italic = 1
 global.encoding = 'utf-8'
 global.mapleader = " "
+
+
+--[[Turn this into lua]]
+--augroup vimrc-incsearch-highlight
+		  --autocmd!
+		  --autocmd CmdlineEnter /,\? :set hlsearch
+		  --autocmd CmdlineLeave /,\? :set nohlsearch
+--augroup END

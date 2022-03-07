@@ -1,5 +1,7 @@
 require ('packer').startup(function()
-
+-- LSP
+use 'neovim/nvim-lspconfig'
+use 'kabouzeid/nvim-lspinstall'
 -- Auto pairs for '(' '[' '{'
 use 'jiangmiao/auto-pairs'
 -- Colors on Hex Codes
@@ -40,6 +42,8 @@ use 'vimlab/split-term.vim'
 use 'vim-scripts/camelcasemotion'
 -- Themes
 use 'sainnhe/sonokai'
+use 'sainnhe/everforest'
+use 'folke/tokyonight.vim'
 
 end)
 

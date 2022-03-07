@@ -57,7 +57,7 @@ end
 time([[Luarocks path setup]], false)
 time([[try_loadstring definition]], true)
 local function try_loadstring(s, component, name)
-  local success, result = pcall(loadstring(s))
+  local success, result = pcall(loadstring(s), name, _G.packer_plugins[name])
   if not success then
     vim.schedule(function()
       vim.api.nvim_notify('packer.nvim: Error running ' .. component .. ' for ' .. name .. ': ' .. result, vim.log.levels.ERROR, {})
@@ -124,6 +124,21 @@ _G.packer_plugins = {
     path = "/home/filipe/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
     url = "https://github.com/norcalli/nvim-colorizer.lua"
   },
+  ["nvim-lspconfig"] = {
+    loaded = true,
+    path = "/home/filipe/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-lspinstall"] = {
+    loaded = true,
+    path = "/home/filipe/.local/share/nvim/site/pack/packer/start/nvim-lspinstall",
+    url = "https://github.com/kabouzeid/nvim-lspinstall"
+  },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "/home/filipe/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
   ["nvim-whichkey-setup.lua"] = {
     loaded = true,
     path = "/home/filipe/.local/share/nvim/site/pack/packer/start/nvim-whichkey-setup.lua",
@@ -144,10 +159,20 @@ _G.packer_plugins = {
     path = "/home/filipe/.local/share/nvim/site/pack/packer/start/split-term.vim",
     url = "https://github.com/vimlab/split-term.vim"
   },
+  ["telescope-fzy-native.nvim"] = {
+    loaded = true,
+    path = "/home/filipe/.local/share/nvim/site/pack/packer/start/telescope-fzy-native.nvim",
+    url = "https://github.com/nvim-telescope/telescope-fzy-native.nvim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/filipe/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["tokyonight-vim"] = {
+    loaded = true,
+    path = "/home/filipe/.local/share/nvim/site/pack/packer/start/tokyonight-vim",
+    url = "https://github.com/ghifarit53/tokyonight-vim"
   },
   ["vim-ctrlspace"] = {
     loaded = true,
