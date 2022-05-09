@@ -43,7 +43,7 @@ use 'vim-scripts/camelcasemotion'
 -- Themes
 use 'sainnhe/sonokai'
 use 'sainnhe/everforest'
-use 'folke/tokyonight.vim'
+--use 'folke/tokyonight.vim'
 
 end)
 
