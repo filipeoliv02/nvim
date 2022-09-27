@@ -1,4 +1,5 @@
 require('plugins/telescope')
 require('plugins/lightline')
 require('plugins/tokyonight')
+require('plugins/coc-nvim')
 --require('plugins/lspinstall')

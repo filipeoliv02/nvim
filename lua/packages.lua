@@ -1,7 +1,30 @@
+local ensure_packer = function()
+  local fn = vim.fn
+  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+  if fn.empty(fn.glob(install_path)) > 0 then
+    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+    vim.cmd [[packadd packer.nvim]]
+    return true
+  end
+  return false
+end
+
+local packer_bootstrap = ensure_packer()
+
 require ('packer').startup(function()
+use 'wbthomason/packer.nvim'
 -- LSP
-use 'neovim/nvim-lspconfig'
-use 'kabouzeid/nvim-lspinstall'
+use {
+    "williamboman/nvim-lsp-installer",
+    "neovim/nvim-lspconfig",
+}
+-- navigator
+use({
+    'ray-x/navigator.lua',
+    requires = {
+        { 'ray-x/guihua.lua', run = 'cd lua/fzy && make' },
+    },
+})
 -- Auto pairs for '(' '[' '{'
 use 'jiangmiao/auto-pairs'
 -- Colors on Hex Codes
@@ -20,6 +43,7 @@ use 'Xuyuanp/nerdtree-git-plugin'
 use 'tiagofumo/vim-nerdtree-syntax-highlight'
 use 'ryanoasis/vim-devicons'
 -- Fuzzy Finder
+use 'junegunn/fzf'
 use 'junegunn/fzf.vim'
 -- Leader Key Helper
 use {
@@ -43,8 +67,15 @@ use 'vim-scripts/camelcasemotion'
 -- Themes
 use 'sainnhe/sonokai'
 use 'sainnhe/everforest'
---use 'folke/tokyonight.vim'
+use 'ray-x/aurora'
+-- AutoCompletion
+use {'neoclide/coc.nvim', branch = 'release'}
 
+
+--use 'folke/tokyonight.vim'
+if packer_bootstrap then
+    require('packer').sync()
+end
 end)
 
 

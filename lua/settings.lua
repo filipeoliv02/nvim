@@ -46,11 +46,20 @@ option.clipboard = 'unnamedplus'
 editor.autochdir = true
 editor.laststatus = 2
 option.showmode = false
+
+-- Theme
 option.termguicolors = true
-command[[colorscheme everforest]]
-vim.o.background = 'dark'
-global.everforest_background = 'hard'
-global.tokyonight_enable_italic = 1
+command[[colorscheme aurora]]
+global.aurora_italic = 1     
+global.aurora_transparent = 0     
+global.aurora_bold = 1     
+global.aurora_darker = 1  
+
+
+--vim.o.background = 'dark'
+--global.everforest_background = 'hard'
+--[[global.tokyonight_enable_italic = 1]]
+
 global.encoding = 'utf-8'
 global.mapleader = " "
 
