@@ -1,3 +1,5 @@
+-- Convert this to Lua
+lua << EOF
 let g:startify_session_dir = '~/.config/nvim/session'
 
 let g:startify_lists = [
@@ -13,3 +15,5 @@ let g:startify_bookmarks = [
             \ { 'i': '~/.config/nvim/init.vim' },
             \ { 'z': '~/.zshrc' },
             \ ]
+
+EOF
